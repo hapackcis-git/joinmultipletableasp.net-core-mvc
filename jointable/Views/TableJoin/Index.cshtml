@@ -1,0 +1,30 @@
+﻿
+@using jointable;
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    IEnumerable<JoinTable> displaydata = ViewData["Result"] as IEnumerable<JoinTable>;
+    }
+   
+<h1>Joint Multiple table into single Table</h1>
+<h3>asp.net core 3.0 mvc without using Entity framework</h3>
+<table class="table">
+    <tr>
+        <th>Country Name</th>
+    <th>State Name</th>
+    <th>City Name</th>
+    </tr>
+    @foreach(var item in displaydata)
+    {
+        <tr>
+            <td>@item.countryName</td>
+            <td>@item.stateName</td>
+            <td>@item.cityName</td>
+
+        </tr>
+    }
+
+</table>
